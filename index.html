@@ -1,37 +1,23 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Skelril Closed Beta</title>
-
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/github-light.css">
-    <script src="javascripts/scale.fix.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1 class="header">Skelril</h1>
-        <p class="header"></p>
-
-
-
-        <ul>
-          <li><a class="buttons" href="http://server.skelril.com/Launcher/bootstrap/Launcher.jar">Launcher</a></li>
-          <li><a class="buttons github" href="https://github.com/Skelril">GitHub Profile</a></li>
-        </ul>
-
-      </header>
-      <section>
-        <h3>
-<a id="welcome-to-skelril-beta" class="anchor" href="#welcome-to-skelril-beta" aria-hidden="true"><span class="octicon octicon-link"></span></a>Welcome to the Skelril Closed Beta!</h3>
-
-<p>You can find the launcher download on the left to get started. You will also need <a href="http://java.com/en/download/">Java 8</a>. Once Java 8 is installed, just double click the launcher file, and sign in. All mod instillation and future updates will be handled by the launcher automagically.</p>
-<p>As a reminder, the server IP is server.skelril.com.</p>
-  </body>
-</html>
+---
+layout: base
+title: Skelril
+---
+<div class="jumbotron">
+  <div class="container">
+    <h1>MineCraft, like never before!</h1>
+    <p>...</p>
+    <p><a class="btn btn-primary btn-lg" href="/server" role="button">Learn more</a></p>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <h1 style="border-bottom: 1px solid #CCC">Recent News</h1>
+  </div>
+  {% for post in site.posts %}
+    <div class="row" style="margin-bottom: 3em;">
+      <h3>{{post.title}}</h3>
+      {{post.excerpt}}
+      <a href="{{post.url}}">Read more</a>
+    </div>
+  {% endfor %}
+</div>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% include default_heading.html %}
+</head>
+<body>
+  {% include menu_bar.html %}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        {{content}}
+      </div>
+      <div class="col-md-4" style="padding-top: 2rem;">
+        <a class="btn btn-primary btn-lg btn-block" href="{{page.download-url}}" role="button">{{page.download-text}}</a>
+      </div>
+    </div>
+  </div>
+  {% include bootstrap_footer.html %}
+</body>
+</html>
