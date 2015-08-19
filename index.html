@@ -14,7 +14,7 @@ title: Skelril
     <h1 class="section_header">Recent News</h1>
   </div>
   {% for post in site.posts limit: 3 %}
-    <div class="row" style="margin-bottom: 3em;">
+    <div class="row" style="padding-bottom: 1.5em;">
       <h3>{{post.title}}</h3>
       <small class="text-muted">Published {{post.date | date: "%B %-d, %Y"}}</small>
       <p>{{post.excerpt}}</p>
