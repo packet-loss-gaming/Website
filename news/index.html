@@ -1,0 +1,28 @@
+---
+layout: base
+title: News
+---
+<div class="container" style="padding-bottom: 50px;">
+  {% for post in site.posts %}
+    <div class="row" style="margin-bottom: 3em;">
+      <h2>{{post.title}}</h2>
+      <small class="text-muted">Published {{post.date | date: "%B %-d, %Y"}}</small>
+      <p>{{post.excerpt}}</p>
+      <a class="btn btn-default btn-md" href="{{post.url}}">Read more</a>
+    </div>
+  {% endfor %}
+</div>
+<nav class="navbar navbar-default navbar-fixed-bottom">
+  <ul class="pager">
+    {% if paginator.previous_page %}
+      <li class="previous"><a href="{{paginator.previous_page_path}}"><span aria-hidden="true">&larr;</span> Older</a></li>
+    {% else %}
+      <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Older</a></li>
+    {% endif %}
+    {% if paginator.next_page %}
+      <li class="next"><a href="{{paginator.next_page_path}}">Newer <span aria-hidden="true">&rarr;</span></a></li>
+    {% else %}
+      <li class="next disabled"><a href="#">Newer <span aria-hidden="true">&rarr;</span></a></li>
+    {% endif %}
+  </ul>
+</nav>

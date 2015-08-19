@@ -13,11 +13,12 @@ title: Skelril
   <div class="row">
     <h1 class="section_header">Recent News</h1>
   </div>
-  {% for post in site.posts %}
+  {% for post in site.posts limit: 3 %}
     <div class="row" style="margin-bottom: 3em;">
       <h3>{{post.title}}</h3>
-      {{post.excerpt}}
-      <a href="{{post.url}}">Read more</a>
+      <small class="text-muted">Published {{post.date | date: "%B %-d, %Y"}}</small>
+      <p>{{post.excerpt}}</p>
+      <a class="btn btn-default btn-md" href="{{post.url}}">Read more</a>
     </div>
   {% endfor %}
 </div>
