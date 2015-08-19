@@ -2,7 +2,7 @@
 layout: download
 title: Play Now | Closed Beta
 download-text: Download Launcher
-download-url: http://server.skelril.com/Launcher/bootstrap/Launcher.jar
+download-url: http://service.skelril.com/Launcher/bootstrap/Launcher.jar
 ---
 # Closed Beta
 
