@@ -1,0 +1,10 @@
+collections:
+  owners:
+    output: true
+    permalink: /team/:path/
+  moderators:
+    output: true
+    permalink: /team/:path/
+  projects:
+    output: true
+    permalink: /projects/:path/
