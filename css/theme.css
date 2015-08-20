@@ -5,3 +5,8 @@ body {
 h1.section_header {
   border-bottom: 1px solid #CCC;
 }
+
+.blured-mc {
+  color: white;
+  background: white url(../images/jumbotronbackground.png) no-repeat scroll center center / cover;
+}
