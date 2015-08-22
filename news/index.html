@@ -4,14 +4,10 @@ title: News
 ---
 <div class="container" style="padding-bottom: 50px;">
   {% for post in site.posts %}
-    <div class="row" style="padding-bottom: 1.5em;">
-      <div class="col-md-12">
-        <h2>{{post.title}}</h2>
-        <small class="text-muted">Published {{post.date | date: "%B %-d, %Y"}}</small>
-        <p>{{post.excerpt}}</p>
-        <a class="btn btn-default btn-md" href="{{post.url}}">Read more</a>
-      </div>
-    </div>
+    <h2>{{post.title}}</h2>
+    <small class="text-muted">Published {{post.date | date: "%B %-d, %Y"}}</small>
+    <p>{{post.excerpt}}</p>
+    <a class="btn btn-default btn-md" href="{{post.url}}">Read more</a>
   {% endfor %}
 </div>
 <footer>
