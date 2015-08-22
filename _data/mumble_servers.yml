@@ -1,0 +1,11 @@
+- title: Primary
+  ip: skelril.cheapmumble.com
+  port: 2053
+  username: <Your Desired Username>
+  password: rzkDeAchxr
+- title: Temporary
+  ip: skelril2.cheapmumble.com
+  port: 2052
+  username: <Your Desired Username>
+  password: rzkDeAchxr
+  active: true
