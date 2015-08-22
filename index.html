@@ -14,7 +14,7 @@ title: Skelril
   {% for post in site.posts limit: 3 %}
     <h2>{{post.title}}</h2>
     <small class="text-muted">Published {{post.date | date: "%B %-d, %Y"}}</small>
-    <p>{{post.excerpt}}</p>
+    {{post.excerpt}}
     <a class="btn btn-default btn-md" href="{{post.url}}">Read more</a>
   {% endfor %}
 </div>
