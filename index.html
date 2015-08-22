@@ -11,14 +11,18 @@ title: Skelril
 </div>
 <div class="container">
   <div class="row">
-    <h1 class="section_header">Recent News</h1>
+    <div class="col-md-12">
+      <h1 class="section_header">Recent News</h1>
+    </div>
   </div>
   {% for post in site.posts limit: 3 %}
     <div class="row" style="padding-bottom: 1.5em;">
-      <h3>{{post.title}}</h3>
-      <small class="text-muted">Published {{post.date | date: "%B %-d, %Y"}}</small>
-      <p>{{post.excerpt}}</p>
-      <a class="btn btn-default btn-md" href="{{post.url}}">Read more</a>
+      <div class="col-md-12">
+        <h2>{{post.title}}</h2>
+        <small class="text-muted">Published {{post.date | date: "%B %-d, %Y"}}</small>
+        <p>{{post.excerpt}}</p>
+        <a class="btn btn-default btn-md" href="{{post.url}}">Read more</a>
+      </div>
     </div>
   {% endfor %}
 </div>
