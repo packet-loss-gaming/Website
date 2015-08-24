@@ -8,5 +8,5 @@ h1.section_header {
 
 .blured-mc {
   color: white;
-  background: white url(../images/jumbotronbackground.png) no-repeat scroll center center / cover;
+  background: white url(/images/jumbotronbackground.png) no-repeat scroll center center / cover;
 }
