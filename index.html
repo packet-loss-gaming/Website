@@ -11,10 +11,7 @@ title: Skelril
 </div>
 <div class="container">
   <h1 class="section_header">Recent News</h1>
-  {% for post in site.posts limit: 3 %}
-    <h2>{{post.title}}</h2>
-    <small class="text-muted">Published {{post.date | date: "%B %-d, %Y"}}</small>
-    {{post.excerpt}}
-    <a class="btn btn-default btn-md" href="{{post.url}}">Read more</a>
+  {% for aPost in site.posts limit: 3 %}
+    {% include post_snippet.html post=aPost %}
   {% endfor %}
 </div>

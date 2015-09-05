@@ -3,11 +3,8 @@ layout: base
 title: News
 ---
 <div class="container" style="padding-bottom: 50px;">
-  {% for post in paginator.posts %}
-    <h2>{{post.title}}</h2>
-    <small class="text-muted">Published {{post.date | date: "%B %-d, %Y"}}</small>
-    {{post.excerpt}}
-    <a class="btn btn-default btn-md" href="{{post.url}}">Read more</a>
+  {% for aPost in paginator.posts %}
+    {% include post_snippet.html post=aPost %}
   {% endfor %}
 </div>
 <footer>
