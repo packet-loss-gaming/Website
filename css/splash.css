@@ -1,0 +1,41 @@
+html {
+  height: 100%;
+}
+
+.btn-primary {
+  animation: primary-fade 2s infinite alternate;
+}
+
+h1.dramatic-in {
+  animation: dramatic-in 2s;
+}
+
+p.dramatic-in {
+  animation: dramatic-in 4s;
+}
+
+div.dramatic-in {
+  animation: dramatic-in 2s;
+}
+
+@keyframes primary-fade {
+    from {
+      color: #fff;
+      background-color: #337ab7;
+      border-color: #2e6da4;
+    }
+    to {
+      color: #fff;
+      background-color: #286090;
+      border-color: #204d74;
+    }
+}
+
+@keyframes dramatic-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+}
