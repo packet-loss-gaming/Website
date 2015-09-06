@@ -10,3 +10,11 @@ h1.section_header {
   color: white;
   background: white url(/images/jumbotronbackground.png) no-repeat scroll center center / cover;
 }
+
+.glyphicon {
+  padding-right: .5em;
+}
+
+.text-muted .glyphicon-comment {
+  padding-left: 1em;
+}
