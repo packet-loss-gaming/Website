@@ -1,5 +1,7 @@
 <h2>{{include.post.title}}</h2>
-<small class="text-muted">
-  <span class="glyphicon glyphicon-time" aria-hidden="true"></span>{{include.post.date | date: "%B %-d, %Y"}}
-  <span class="glyphicon glyphicon-comment" aria-hidden="true"></span><span class="disqus-comment-count" data-disqus-url="{{include.post.url | prepend: site.url}}">0 Comments</span>
-</small>
+<p>
+  <small class="text-muted">
+    <span class="glyphicon glyphicon-time" aria-hidden="true"></span>{{include.post.date | date: "%B %-d, %Y"}}
+    <span class="glyphicon glyphicon-comment" aria-hidden="true"></span><span class="disqus-comment-count" data-disqus-url="{{include.post.url | prepend: site.url}}">0 Comments</span>
+  </small>
+</p>
