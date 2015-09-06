@@ -18,3 +18,7 @@ h1.section_header {
 .text-muted .glyphicon-comment {
   padding-left: 1em;
 }
+
+a {
+  transition: color .2s, background-color .2s;
+}
