@@ -4,6 +4,7 @@ html {
 
 body {
   min-height: 100%;
+  margin-bottom: 3em;
 }
 
 .btn-primary {
