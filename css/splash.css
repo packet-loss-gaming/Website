@@ -24,6 +24,7 @@ p.dramatic-in {
 }
 
 div.dramatic-in {
+  margin-bottom: 5px;
   animation: dramatic-in 2s;
 }
 
