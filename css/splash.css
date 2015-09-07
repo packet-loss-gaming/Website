@@ -4,11 +4,14 @@ html {
 
 body {
   min-height: 100%;
-  margin-bottom: 3em;
 }
 
 .btn-primary {
   animation: primary-fade 2s infinite alternate;
+}
+
+.dramatic-in .btn {
+  margin-bottom: 5px;
 }
 
 h1.dramatic-in {
