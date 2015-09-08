@@ -2,7 +2,7 @@ url: http://beta.skelril.com
 disqus_shortname: skelril
 
 slogan: Minecraft, like never before!
-slogan-subtext: Skelril is shaking up Minecraft with innovative mechanics, gameplay, and content found no where else.
+slogan-subtext: Skelril is shaking up Minecraft with innovative mechanics, gameplay, and content found nowhere else.
 
 paginate: 5
 paginate_path: "/news/page/:num/"
