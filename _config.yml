@@ -17,3 +17,9 @@ collections:
   projects:
     output: true
     permalink: /projects/:path/
+
+feed:
+  path: atom.xml
+
+gems:
+  - jekyll-feed
