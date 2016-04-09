@@ -4,6 +4,6 @@
 <div class="row">
   <form class="col-xs-offset-2 col-xs-8 col-sm-offset-4 col-sm-4">
     <input class="form-control" type="text" style="text-align: center;" ng-model="user.name" placeholder="Username">
-    <button class="btn btn-primary btn-block"style="margin-top: 10px;" ng-disabled="user.name.length < 1" ng-click="authenticate()">Join Chat</button>
+    <button class="btn btn-primary btn-block"style="margin-top: 10px;" ng-disabled="!user.name || user.name.length < 1" ng-click="authenticate()">Join Chat</button>
   </form>
 </div>
