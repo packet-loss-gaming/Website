@@ -23,3 +23,4 @@ feed:
 
 gems:
   - jekyll-feed
+  - jekyll-paginate

@@ -1,0 +1,29 @@
+<div id="chat-feed" class="row" style="padding-bottom: 50px;">
+  <div class="col-sm-10">
+    <ul class="list-group">
+      <li class="list-group-item" ng-repeat="response in responses">
+        <span ng-if="response.method === 'send'">
+          &lt;<span ng-bind="response.params.sender"></span>&gt; <span ng-bind="response.params.message"></span>
+        </span>
+        <span ng-if="response.method === 'join'"class=""list-group-item>
+          <span ng-bind="response.params.name"></span> joined <span ng-if="response.params.remote">chat</span> <span ng-if="!response.params.remote">the game</span>
+        </span>
+        <span ng-if="response.method === 'leave'">
+          <span ng-bind="response.params.name"></span> left <span ng-if="response.params.remote">chat</span> <span ng-if="!response.params.remote">the game</span>
+        </span>
+      </li>
+    </ul>
+  </div>
+</div>
+<nav class="navbar navbar-default navbar-fixed-bottom">
+  <div class="container">
+    <form class="row" style="padding-top: 5px;">
+      <div class="col-sm-10 col-xs-9">
+        <input type="text" style="width: 100%;" class="form-control" ng-model="user.message" placeholder="Message">
+      </div>
+      <div class="col-sm-2 col-xs-3">
+        <button class="btn btn-primary btn-block" ng-disabled="user.message.length < 1" ng-click="sendMessage()">Send</button>
+      </div>
+    </form>
+  </div>
+</nav>

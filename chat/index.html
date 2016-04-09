@@ -1,0 +1,10 @@
+---
+layout: base
+title: Game Chat
+scripts: ['https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js', 'js/controllers.js', 'js/mousetrap.min.js']
+---
+
+<div class="container" style="margin-top: 2rem;" ng-app="chatCraftWebApp" ng-controller="ChatCraftController">
+  <div class="login" ng-if="!isConnected()" ng-include="'templates/join.html'"></div>
+  <div class="login" ng-if="isConnected()" ng-include="'templates/chat.html'"></div>
+</div>
