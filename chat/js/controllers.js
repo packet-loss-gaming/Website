@@ -7,13 +7,13 @@ angular.module('chatCraftWebApp', [])
   $scope.serverUsers = []
   $scope.remoteUsers = []
 
-  var chatSocket
-  var uuid
+  let chatSocket
+  let uuid
 
-  var genUUID = function() {
-    var d = new Date().getTime()
-    var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-      var r = (d + Math.random()*16)%16 | 0
+  let genUUID = function() {
+    let d = new Date().getTime()
+    let uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+      let r = (d + Math.random()*16)%16 | 0
       d = Math.floor(d/16)
       return (c=='x' ? r : (r&0x3|0x8)).toString(16)
     })
@@ -61,7 +61,7 @@ angular.module('chatCraftWebApp', [])
       $scope.$apply()
     }
 
-    var handleJoin = function(recieved) {
+    let handleJoin = function(recieved) {
       $scope.chatResponses.push(recieved)
 
       if (recieved.params.remote) {
@@ -71,32 +71,33 @@ angular.module('chatCraftWebApp', [])
       }
     }
 
-    var handleLeave = function(recieved) {
+    let handleLeave = function(recieved) {
       $scope.chatResponses.push(recieved)
-      let index
-      if (recieved.params.remote) {
-        index = $scope.remoteUsers.indexOf(recieved.params.name)
-      } else {
-        index = $scope.serverUsers.indexOf(recieved.params.name)
+
+      let findUser = function(user) {
+        return user.name === recieved.params.name
       }
+
+      let users = recieved.params.remote ? $scope.remoteUsers : $scope.serverUsers
+      let index = users.findIndex(findUser)
 
       if (index > -1) {
-          array.splice(index, 1);
+          users.splice(index, 1);
       }
     }
 
-    var handleSend = function(recieved) {
+    let handleSend = function(recieved) {
       $scope.chatResponses.push(recieved)
     }
 
-    var handleList = function(recieved) {
+    let handleList = function(recieved) {
       $scope.serverUsers = recieved.params.server
       $scope.remoteUsers = recieved.params.remote
     }
 
     chatSocket.onmessage = function(event) {
-      var recieved = JSON.parse(event.data)
-      var method = recieved.method
+      let recieved = JSON.parse(event.data)
+      let method = recieved.method
 
       switch (method) {
         case 'join':
@@ -113,7 +114,7 @@ angular.module('chatCraftWebApp', [])
           break
       }
 
-      var endOfDoc = document.body.clientHeight == window.scrollY + window.innerHeight
+      let endOfDoc = document.body.clientHeight == window.scrollY + window.innerHeight
       $scope.$apply()
 
       if (endOfDoc) {
