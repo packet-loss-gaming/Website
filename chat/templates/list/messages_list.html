@@ -1,13 +1,7 @@
 <ul class="list-group">
   <li class="list-group-item" ng-repeat="response in chatResponses">
-    <span ng-if="response.method === 'send'">
-      &lt;<span ng-bind="response.params.sender"></span>&gt; <span ng-bind="response.params.message"></span>
-    </span>
-    <span ng-if="response.method === 'join'"class=""list-group-item>
-      <span ng-bind="response.params.name"></span> joined <span ng-if="response.params.remote">chat</span> <span ng-if="!response.params.remote">the game</span>
-    </span>
-    <span ng-if="response.method === 'leave'">
-      <span ng-bind="response.params.name"></span> left <span ng-if="response.params.remote">chat</span> <span ng-if="!response.params.remote">the game</span>
-    </span>
+    <span ng-if="response.method === 'send'" ng-bind="getChatMessage(response)"></span>
+    <span ng-if="response.method === 'join'" ng-bind="getJoinMessage(response)"></span>
+    <span ng-if="response.method === 'leave'" ng-bind="getLeaveMessage(response)"></span>
   </li>
 </ul>

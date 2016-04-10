@@ -37,6 +37,18 @@ angular.module('chatCraftWebApp', [])
     return chatSocket && chatSocket.readyState === 1
   }
 
+  $scope.getJoinMessage = function(response) {
+    return response.params.name + ' joined ' + (response.params.remote ? 'chat' : 'the game')
+  }
+
+  $scope.getLeaveMessage = function(response) {
+    return response.params.name + ' left ' + (response.params.remote ? 'chat' : 'the game')
+  }
+
+  $scope.getChatMessage = function(response) {
+    return '<' + response.params.sender + '> ' + response.params.message
+  }
+
   $scope.authenticate = function() {
     if (chatSocket) {
       return
@@ -70,6 +82,7 @@ angular.module('chatCraftWebApp', [])
 
     let handleJoin = function(recieved) {
       updateChatResponses(recieved)
+      notify($scope.getJoinMessage(recieved))
 
       if (recieved.params.remote) {
         $scope.remoteUsers.push({ name: recieved.params.name })
@@ -80,6 +93,7 @@ angular.module('chatCraftWebApp', [])
 
     let handleLeave = function(recieved) {
       updateChatResponses(recieved)
+      notify($scope.getLeaveMessage(recieved))
 
       let findUser = function(user) {
         return user.name === recieved.params.name
@@ -89,17 +103,33 @@ angular.module('chatCraftWebApp', [])
       let index = users.findIndex(findUser)
 
       if (index > -1) {
-          users.splice(index, 1);
+          users.splice(index, 1)
       }
     }
 
     let handleSend = function(recieved) {
       updateChatResponses(recieved)
+      notify($scope.getChatMessage(recieved))
     }
 
     let handleList = function(recieved) {
       $scope.serverUsers = recieved.params.server
       $scope.remoteUsers = recieved.params.remote
+    }
+
+    let notify = function(message) {
+      if (!("Notification" in window)) {
+      } else if (Notification.permission === "granted") {
+        if (document.hidden) {
+          new Notification(message)
+        }
+      } else if (Notification.permission !== 'denied') {
+        Notification.requestPermission(function (permission) {
+          if (permission === "granted") {
+            notify(message)
+          }
+        })
+      }
     }
 
     chatSocket.onmessage = function(event) {
