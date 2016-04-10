@@ -61,8 +61,15 @@ angular.module('chatCraftWebApp', [])
       $scope.$apply()
     }
 
+    let updateChatResponses = function(response) {
+      $scope.chatResponses.push(response)
+      if ($scope.chatResponses.length > 50) {
+        $scope.chatResponses = $scope.chatResponses.slice(1)
+      }
+    }
+
     let handleJoin = function(recieved) {
-      $scope.chatResponses.push(recieved)
+      updateChatResponses(recieved)
 
       if (recieved.params.remote) {
         $scope.remoteUsers.push({ name: recieved.params.name })
@@ -72,7 +79,7 @@ angular.module('chatCraftWebApp', [])
     }
 
     let handleLeave = function(recieved) {
-      $scope.chatResponses.push(recieved)
+      updateChatResponses(recieved)
 
       let findUser = function(user) {
         return user.name === recieved.params.name
@@ -87,7 +94,7 @@ angular.module('chatCraftWebApp', [])
     }
 
     let handleSend = function(recieved) {
-      $scope.chatResponses.push(recieved)
+      updateChatResponses(recieved)
     }
 
     let handleList = function(recieved) {
