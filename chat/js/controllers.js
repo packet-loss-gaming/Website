@@ -1,8 +1,11 @@
+ "use strict"
 angular.module('chatCraftWebApp', [])
   .controller('ChatCraftController', function ($scope) {
 
   $scope.user = { }
-  $scope.responses = []
+  $scope.chatResponses = []
+  $scope.serverUsers = []
+  $scope.remoteUsers = []
 
   var chatSocket
   var uuid
@@ -53,13 +56,65 @@ angular.module('chatCraftWebApp', [])
       $scope.$apply()
     }
 
+    var handleJoin = function(recieved) {
+      $scope.chatResponses.push(recieved)
+
+      if (recieved.params.remote) {
+        $scope.remoteUsers.push({ name: recieved.params.name })
+      } else {
+        $scope.serverUsers.push({ name: recieved.params.name })
+      }
+    }
+
+    var handleLeave = function(recieved) {
+      $scope.chatResponses.push(recieved)
+      let index
+      if (recieved.params.remote) {
+        index = $scope.remoteUsers.indexOf(recieved.params.name)
+      } else {
+        index = $scope.serverUsers.indexOf(recieved.params.name)
+      }
+
+      if (index > -1) {
+          array.splice(index, 1);
+      }
+    }
+
+    var handleSend = function(recieved) {
+      $scope.chatResponses.push(recieved)
+    }
+
+    var handleList = function(recieved) {
+      $scope.serverUsers = recieved.params.server
+      $scope.remoteUsers = recieved.params.remote
+    }
+
     chatSocket.onmessage = function(event) {
-      $scope.responses.push(JSON.parse(event.data))
+      var recieved = JSON.parse(event.data)
+      var method = recieved.method
+
+      switch (method) {
+        case 'join':
+          handleJoin(recieved)
+          break
+        case 'leave':
+          handleLeave(recieved)
+          break
+        case 'send':
+          handleSend(recieved)
+          break
+        case 'list':
+          handleList(recieved)
+          break
+      }
+
+      console.log(recieved)
+
       var endOfDoc = document.body.clientHeight == window.scrollY + window.innerHeight
       $scope.$apply()
 
       if (endOfDoc) {
-        document.getElementById('chat-feed').scrollIntoView({block: 'end'});
+        document.getElementById('chat-feed').scrollIntoView({block: 'end'})
       }
     }
   }
