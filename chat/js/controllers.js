@@ -7,13 +7,13 @@ angular.module('chatCraftWebApp', [])
   $scope.serverUsers = []
   $scope.remoteUsers = []
 
-  let chatSocket
-  let uuid
+  var chatSocket
+  var uuid
 
-  let genUUID = function() {
-    let d = new Date().getTime()
-    let uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-      let r = (d + Math.random()*16)%16 | 0
+  var genUUID = function() {
+    var d = new Date().getTime()
+    var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+      var r = (d + Math.random()*16)%16 | 0
       d = Math.floor(d/16)
       return (c=='x' ? r : (r&0x3|0x8)).toString(16)
     })
@@ -73,14 +73,14 @@ angular.module('chatCraftWebApp', [])
       $scope.$apply()
     }
 
-    let updateChatResponses = function(response) {
+    var updateChatResponses = function(response) {
       $scope.chatResponses.push(response)
       if ($scope.chatResponses.length > 50) {
         $scope.chatResponses = $scope.chatResponses.slice(1)
       }
     }
 
-    let handleJoin = function(recieved) {
+    var handleJoin = function(recieved) {
       updateChatResponses(recieved)
       notify($scope.getJoinMessage(recieved))
 
@@ -91,33 +91,33 @@ angular.module('chatCraftWebApp', [])
       }
     }
 
-    let handleLeave = function(recieved) {
+    var handleLeave = function(recieved) {
       updateChatResponses(recieved)
       notify($scope.getLeaveMessage(recieved))
 
-      let findUser = function(user) {
+      var findUser = function(user) {
         return user.name === recieved.params.name
       }
 
-      let users = recieved.params.remote ? $scope.remoteUsers : $scope.serverUsers
-      let index = users.findIndex(findUser)
+      var users = recieved.params.remote ? $scope.remoteUsers : $scope.serverUsers
+      var index = users.findIndex(findUser)
 
       if (index > -1) {
           users.splice(index, 1)
       }
     }
 
-    let handleSend = function(recieved) {
+    var handleSend = function(recieved) {
       updateChatResponses(recieved)
       notify($scope.getChatMessage(recieved))
     }
 
-    let handleList = function(recieved) {
+    var handleList = function(recieved) {
       $scope.serverUsers = recieved.params.server
       $scope.remoteUsers = recieved.params.remote
     }
 
-    let notify = function(message) {
+    var notify = function(message) {
       if (!("Notification" in window)) {
       } else if (Notification.permission === "granted") {
         if (document.hidden) {
@@ -133,8 +133,8 @@ angular.module('chatCraftWebApp', [])
     }
 
     chatSocket.onmessage = function(event) {
-      let recieved = JSON.parse(event.data)
-      let method = recieved.method
+      var recieved = JSON.parse(event.data)
+      var method = recieved.method
 
       switch (method) {
         case 'join':
@@ -151,12 +151,12 @@ angular.module('chatCraftWebApp', [])
           break
       }
 
-      let diff = document.body.clientHeight - (window.scrollY + window.innerHeight)
-      let endOfDoc = 0 <= diff && diff <= 75
+      var diff = document.body.clientHeight - (window.scrollY + window.innerHeight)
+      var endOfDoc = 0 <= diff && diff <= 75
       $scope.$apply()
 
       if (endOfDoc) {
-        let element = document.getElementById('chat-feed')
+        var element = document.getElementById('chat-feed')
         window.scrollTo(0, element.scrollTop + element.clientHeight)
       }
     }
