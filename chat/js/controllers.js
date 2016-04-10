@@ -56,6 +56,11 @@ angular.module('chatCraftWebApp', [])
       $scope.$apply()
     }
 
+    chatSocket.onclose = function(event) {
+      chatSocket = undefined
+      $scope.$apply()
+    }
+
     var handleJoin = function(recieved) {
       $scope.chatResponses.push(recieved)
 
