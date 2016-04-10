@@ -155,7 +155,8 @@ angular.module('chatCraftWebApp', [])
       $scope.$apply()
 
       if (endOfDoc) {
-        document.getElementById('chat-feed').scrollIntoView({block: 'end'})
+        let element = document.getElementById('chat-feed')
+        window.scrollTo(0, element.scrollTop + element.clientHeight)
       }
     }
   }
