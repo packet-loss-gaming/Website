@@ -151,7 +151,8 @@ angular.module('chatCraftWebApp', [])
           break
       }
 
-      let endOfDoc = document.body.clientHeight == window.scrollY + window.innerHeight
+      let diff = document.body.clientHeight - (window.scrollY + window.innerHeight)
+      let endOfDoc = 0 <= diff && diff <= 75
       $scope.$apply()
 
       if (endOfDoc) {
