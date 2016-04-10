@@ -18,12 +18,12 @@
         </div>
         <div class="visible-xs-inline col-xs-2">
           <div ng-show="!user.message || user.message.length < 1">
-            <button class="btn btn-default btn-block" ng-class="{ active: showOnline }" ng-disabled="" ng-click="showOnline = !showOnline">
+            <a class="btn btn-default btn-block" ng-class="{ active: showOnline }" ng-disabled="" ng-click="showOnline = !showOnline">
               <span class="glyphicon glyphicon-user" aria-hidden="true" ></span>
-            </button>
+            </a>
           </div>
           <div ng-show="user.message && user.message.length > 0">
-            <button class="btn btn-primary btn-block" ng-disabled="" ng-click="sendMessage()">
+            <button class="btn btn-primary btn-block" ng-disabled="!user.message || user.message.length < 1" ng-click="sendMessage()">
               <span class="glyphicon glyphicon-send" aria-hidden="true"></span>
             </button>
           </div>
