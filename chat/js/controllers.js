@@ -113,8 +113,6 @@ angular.module('chatCraftWebApp', [])
           break
       }
 
-      console.log(recieved)
-
       var endOfDoc = document.body.clientHeight == window.scrollY + window.innerHeight
       $scope.$apply()
 
