@@ -29,6 +29,29 @@ angular.module('chatCraftWebApp', [])
     localStorage.setItem("identifier", uuid = genUUID())
   }
 
+  window.addEventListener("resize", resizeThrottler, false);
+
+  var resizeTimeout;
+  function resizeThrottler() {
+    // ignore resize events as long as an actualResizeHandler execution is in the queue
+    if ( !resizeTimeout ) {
+      resizeTimeout = setTimeout(function() {
+        resizeTimeout = null;
+        actualResizeHandler();
+
+       // The actualResizeHandler will execute at a rate of 15fps
+       }, 66);
+    }
+  }
+
+  function actualResizeHandler() {
+    $scope.$apply();
+  }
+
+  $scope.chatHeight = function() {
+    return window.innerHeight - 141;
+  }
+
   $scope.isLoading = function() {
     return chatSocket
   }
@@ -55,7 +78,7 @@ angular.module('chatCraftWebApp', [])
 
   $scope.scrollChatToEnd = function(response) {
     var element = document.getElementById('chat-feed')
-    window.scrollTo(0, element.scrollTop + element.clientHeight)
+    element.scrollTop = element.scrollHeight
   }
 
   $scope.authenticate = function() {
@@ -161,12 +184,14 @@ angular.module('chatCraftWebApp', [])
           break
       }
 
-      var diff = document.body.clientHeight - (window.scrollY + window.innerHeight)
+      var element = document.getElementById('chat-feed')
+      var diff = element.scrollHeight - (element.scrollTop + element.clientHeight)
       var endOfDoc = 0 <= diff && diff <= 75
+
       $scope.$apply()
 
       if (endOfDoc) {
-        $scope.scrollChatToEnd();
+        $scope.scrollChatToEnd()
       }
     }
   }

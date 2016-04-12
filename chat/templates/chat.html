@@ -1,11 +1,12 @@
-<div id="chat-feed" class="row" style="padding-bottom: 50px;">
-  <div ng-if="!showOnline" class="col-sm-10">
+<div class="row">
+  <div id="chat-feed" class="col-xs-12 col-sm-10" style="overflow-y: auto;" ng-style="{ height: chatHeight() + 'px' }" ng-show="!showOnline">
     <div ng-include="'templates/list/messages_list.html'"></div>
   </div>
-  <div ng-if="showOnline" class="col-sm-10">
+  <div class="hidden-xs col-sm-2" style="overflow-y: auto;" ng-style="{ height: chatHeight() + 'px' }">
     <div ng-include="'templates/list/user_list.html'"></div>
   </div>
-  <div class="hidden-xs col-sm-2">
+
+  <div class="visible-xs-block col-xs-12" ng-if="showOnline">
     <div ng-include="'templates/list/user_list.html'"></div>
   </div>
 </div>
@@ -14,11 +15,11 @@
     <form style="padding-top: 5px;">
       <div class="row">
         <div class="col-xs-10">
-          <input type="text" style="max-width: 100%;" class="form-control" ng-model="user.message" ng-focus="scrollChatToEnd()" placeholder="Message">
+          <input type="text" style="max-width: 100%;" class="form-control" ng-model="user.message" placeholder="Message">
         </div>
         <div class="visible-xs-inline col-xs-2">
           <div ng-show="!user.message || user.message.length < 1">
-            <a class="btn btn-default btn-block" ng-class="{ active: showOnline }" ng-disabled="" ng-click="showOnline = !showOnline">
+            <a class="btn btn-default btn-block" ng-class="{ active: showOnline }" ng-click="showOnline = !showOnline">
               <span class="glyphicon glyphicon-user" aria-hidden="true" ></span>
             </a>
           </div>
