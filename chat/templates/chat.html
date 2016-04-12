@@ -14,7 +14,7 @@
     <form style="padding-top: 5px;">
       <div class="row">
         <div class="col-xs-10">
-          <input type="text" style="max-width: 100%;" class="form-control" ng-model="user.message" placeholder="Message">
+          <input type="text" style="max-width: 100%;" class="form-control" ng-model="user.message" ng-focus="scrollChatToEnd()" placeholder="Message">
         </div>
         <div class="visible-xs-inline col-xs-2">
           <div ng-show="!user.message || user.message.length < 1">

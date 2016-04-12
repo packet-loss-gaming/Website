@@ -49,6 +49,15 @@ angular.module('chatCraftWebApp', [])
     return '<' + response.params.sender + '> ' + response.params.message
   }
 
+  $scope.getSystemMessage = function(response) {
+    return response.params.message
+  }
+
+  $scope.scrollChatToEnd = function(response) {
+    var element = document.getElementById('chat-feed')
+    window.scrollTo(0, element.scrollTop + element.clientHeight)
+  }
+
   $scope.authenticate = function() {
     if (chatSocket) {
       return
@@ -144,6 +153,7 @@ angular.module('chatCraftWebApp', [])
           handleLeave(recieved)
           break
         case 'send':
+        case 'ssend':
           handleSend(recieved)
           break
         case 'list':
@@ -156,8 +166,7 @@ angular.module('chatCraftWebApp', [])
       $scope.$apply()
 
       if (endOfDoc) {
-        var element = document.getElementById('chat-feed')
-        window.scrollTo(0, element.scrollTop + element.clientHeight)
+        $scope.scrollChatToEnd();
       }
     }
   }
