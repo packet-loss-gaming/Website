@@ -49,7 +49,7 @@ angular.module('chatCraftWebApp', [])
   }
 
   $scope.chatHeight = function() {
-    return window.innerHeight - 141;
+    return window.innerHeight - 101;
   }
 
   $scope.isLoading = function() {

@@ -1,4 +1,4 @@
-<ul class="list-group">
+<ul class="list-group" style="padding-top: 20px;">
   <li class="list-group-item" ng-repeat="response in chatResponses">
     <span ng-if="response.method === 'send'" ng-bind="getChatMessage(response)"></span>
     <span ng-if="response.method === 'ssend'" ng-bind="getSystemMessage(response)"></span>
