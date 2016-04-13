@@ -185,7 +185,7 @@ angular.module('chatCraftWebApp', [])
       }
 
       var element = document.getElementById('chat-feed')
-      var diff = element.scrollHeight - (element.scrollTop + element.clientHeight)
+      var diff = element ? element.scrollHeight - (element.scrollTop + element.clientHeight) : -1
       var endOfDoc = 0 <= diff && diff <= 75
 
       $scope.$apply()
