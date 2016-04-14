@@ -1,5 +1,5 @@
  "use strict"
-angular.module('chatCraftWebApp', [])
+angular.module('chatCraftWebApp', ['ngSanitize'])
   .controller('ChatCraftController', function ($scope) {
 
   $scope.user = { };
