@@ -81,15 +81,19 @@ angular.module('chatCraftWebApp', ['ngSanitize'])
     element.scrollTop = element.scrollHeight;
   };
 
+  var tries = 0;
+
   $scope.authenticate = function() {
     if (chatSocket) {
       return;
     }
+    tries += 1;
 
     chatSocket = new WebSocket("ws://server.skelril.com:8080");
     localStorage.setItem("username", $scope.user.name);
 
     chatSocket.onopen = function(event) {
+      tries = 0;
       chatSocket.send(JSON.stringify({
         user: uuid,
         method: 'join',
@@ -103,6 +107,10 @@ angular.module('chatCraftWebApp', ['ngSanitize'])
     chatSocket.onclose = function(event) {
       chatSocket = undefined;
       $scope.$apply();
+
+      if (tries < 3) {
+        $scope.authenticate();
+      }
     };
 
     var updateChatResponses = function(response) {
