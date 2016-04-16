@@ -105,10 +105,11 @@ angular.module('chatCraftWebApp', ['ngSanitize'])
     };
 
     chatSocket.onclose = function(event) {
-      chatSocket = undefined;
       if (tries < 3) {
         $scope.authenticate();
+        $scope.$apply();
       } else {
+        chatSocket = undefined;
         $scope.$apply();
       }
     };
