@@ -157,6 +157,11 @@ angular.module('chatCraftWebApp', ['ngSanitize'])
       notify($scope.getChatMessage(recieved));
     };
 
+    var handleSSend = function(recieved) {
+      updateChatResponses(recieved);
+      notify($scope.getSystemMessage(recieved));
+    };
+
     var handleList = function(recieved) {
       $scope.serverUsers = recieved.params.server;
       $scope.remoteUsers = recieved.params.remote;
@@ -189,8 +194,10 @@ angular.module('chatCraftWebApp', ['ngSanitize'])
           handleLeave(recieved);
           break;
         case 'send':
-        case 'ssend':
           handleSend(recieved);
+          break;
+        case 'ssend':
+          handleSSend(recieved);
           break;
         case 'list':
           handleList(recieved);
