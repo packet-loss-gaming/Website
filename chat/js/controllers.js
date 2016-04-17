@@ -113,7 +113,7 @@ angular.module('chatCraftWebApp', ['ngSanitize'])
       }
       $scope.$apply();
 
-      if (tries === 0) {
+      if (tries <= 1) {
         notify("You've been disconnected from the chat server");
       }
     };
