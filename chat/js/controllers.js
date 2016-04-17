@@ -102,6 +102,8 @@ angular.module('chatCraftWebApp', ['ngSanitize'])
         }
       }));
       $scope.$apply();
+
+      notify("You're connected to the chat server");
     };
 
     chatSocket.onclose = function(event) {
@@ -110,6 +112,10 @@ angular.module('chatCraftWebApp', ['ngSanitize'])
         $scope.authenticate();
       }
       $scope.$apply();
+
+      if (tries === 0) {
+        notify("You've been disconnected from the chat server");
+      }
     };
 
     var updateChatResponses = function(response) {
