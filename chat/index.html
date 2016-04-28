@@ -5,7 +5,8 @@ scripts: ['https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js'
 ---
 
 <div class="container" ng-app="chatCraftWebApp" ng-controller="ChatCraftController">
-  <div class="login" ng-if="!isConnected() && !isLoading()" ng-include="'templates/join.html'"></div>
-  <div class="login" ng-if="!isConnected() && isLoading()" ng-include="'templates/loading.html'"></div>
-  <div class="login" ng-if="isConnected()" ng-include="'templates/chat.html'"></div>
+  <div ng-if="!isConnected() && !isLoading()" ng-include="'templates/join.html'"></div>
+  <div ng-if="(!isConnected() && isLoading()) || (isConnected() && !hasPendingVerification() && !hasUsersListed())" ng-include="'templates/loading.html'"></div>
+  <div ng-if="isConnected() && hasPendingVerification() && !hasUsersListed()" ng-include="'templates/verify.html'"></div>
+  <div ng-if="isConnected() && hasUsersListed()" ng-include="'templates/chat.html'"></div>
 </div>

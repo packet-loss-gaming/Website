@@ -4,8 +4,13 @@ angular.module('chatCraftWebApp', ['ngSanitize'])
 
   $scope.user = { };
   $scope.chatResponses = [];
-  $scope.serverUsers = [];
-  $scope.remoteUsers = [];
+
+  var refreshScope = function() {
+    $scope.serverUsers = [];
+    $scope.remoteUsers = [];
+  }
+
+  refreshScope();
 
   var chatSocket;
   var uuid;
@@ -60,6 +65,14 @@ angular.module('chatCraftWebApp', ['ngSanitize'])
     return chatSocket && chatSocket.readyState === 1;
   };
 
+  $scope.hasUsersListed = function() {
+    return $scope.serverUsers.length + $scope.remoteUsers.length > 0;
+  }
+
+  $scope.hasPendingVerification = function() {
+    return $scope.verificationCode;
+  }
+
   $scope.getJoinMessage = function(response) {
     return response.params.name + ' joined ' + (response.params.remote ? 'chat' : 'the game');
   };
@@ -76,7 +89,7 @@ angular.module('chatCraftWebApp', ['ngSanitize'])
     return response.params.message;
   };
 
-  $scope.scrollChatToEnd = function(response) {
+  $scope.scrollChatToEnd = function() {
     var element = document.getElementById('chat-feed');
     element.scrollTop = element.scrollHeight;
   };
@@ -111,11 +124,13 @@ angular.module('chatCraftWebApp', ['ngSanitize'])
       if (tries < 3) {
         $scope.authenticate();
       }
-      $scope.$apply();
 
       if (tries <= 1) {
+        refreshScope();
         notify("You've been disconnected from the chat server");
       }
+
+      $scope.$apply();
     };
 
     var updateChatResponses = function(response) {
@@ -123,6 +138,11 @@ angular.module('chatCraftWebApp', ['ngSanitize'])
       if ($scope.chatResponses.length > 50) {
         $scope.chatResponses = $scope.chatResponses.slice(1);
       }
+    };
+
+    var handleVerify = function(recieved) {
+      $scope.verificationCode = recieved.params.code;
+      $scope.verificationText = "/vrc " + $scope.verificationCode;
     };
 
     var handleJoin = function(recieved) {
@@ -187,6 +207,9 @@ angular.module('chatCraftWebApp', ['ngSanitize'])
       var method = recieved.method;
 
       switch (method) {
+        case 'verify':
+          handleVerify(recieved);
+          break;
         case 'join':
           handleJoin(recieved);
           break;
