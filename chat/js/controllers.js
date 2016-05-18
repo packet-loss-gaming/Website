@@ -1,9 +1,17 @@
  "use strict"
-angular.module('chatCraftWebApp', ['ngSanitize'])
-  .controller('ChatCraftController', function ($scope) {
+
+var chatCraftWebApp = angular.module('chatCraftWebApp', ['ngSanitize']);
+
+chatCraftWebApp.config(function($interpolateProvider) {
+    $interpolateProvider.startSymbol('[[');
+    $interpolateProvider.endSymbol(']]');
+  });
+
+chatCraftWebApp.controller('ChatCraftController', function ($scope) {
 
   $scope.user = { };
   $scope.chatResponses = [];
+  $scope.targetUser = undefined;
 
   var refreshScope = function() {
     $scope.serverUsers = [];
@@ -83,6 +91,20 @@ angular.module('chatCraftWebApp', ['ngSanitize'])
 
   $scope.getChatMessage = function(response) {
     return '<' + response.params.sender + '> ' + response.params.message;
+  };
+
+  $scope.getPrivateMessage = function(response) {
+    var fromName = 'You';
+    if (response.params.sender !== $scope.user.name) {
+      fromName = response.params.sender;
+    }
+
+    var toName = 'You';
+    if (response.params.target !== $scope.user.name) {
+      toName = response.params.target;
+    }
+
+    return '[' + fromName + ' -> ' + toName + '] ' + response.params.message;
   };
 
   $scope.getSystemMessage = function(response) {
@@ -177,6 +199,11 @@ angular.module('chatCraftWebApp', ['ngSanitize'])
       notify($scope.getChatMessage(recieved));
     };
 
+    var handlePSend = function(recieved) {
+      updateChatResponses(recieved);
+      notify($scope.getPrivateMessage(recieved));
+    };
+
     var handleSSend = function(recieved) {
       updateChatResponses(recieved);
       notify($scope.getSystemMessage(recieved));
@@ -219,6 +246,9 @@ angular.module('chatCraftWebApp', ['ngSanitize'])
         case 'send':
           handleSend(recieved);
           break;
+        case 'psend':
+          handlePSend(recieved);
+          break;
         case 'ssend':
           handleSSend(recieved);
           break;
@@ -240,13 +270,36 @@ angular.module('chatCraftWebApp', ['ngSanitize'])
   };
 
   $scope.sendMessage = function() {
-    chatSocket.send(JSON.stringify({
-      user: uuid,
-      method: 'send',
-      params: {
-        message: $scope.user.message
-      }
-    }));
+    if ($scope.targetUser) {
+      chatSocket.send(JSON.stringify({
+        user: uuid,
+        method: 'psend',
+        params: {
+          message: $scope.user.message,
+          target: $scope.targetUser
+        }
+      }));
+    } else {
+      chatSocket.send(JSON.stringify({
+        user: uuid,
+        method: 'send',
+        params: {
+          message: $scope.user.message
+        }
+      }));
+    }
     $scope.user.message = "";
   };
+
+  $scope.setTargetUser = function(user) {
+    if (user === $scope.user.name) {
+      return;
+    }
+
+    if ($scope.targetUser === user) {
+      $scope.targetUser = undefined;
+    } else {
+      $scope.targetUser = user;
+    }
+  }
 })

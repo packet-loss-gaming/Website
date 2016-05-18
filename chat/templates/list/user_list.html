@@ -2,12 +2,12 @@
   <h3>In Game</h3>
 </div>
 <ul class="list-group">
-  <li class="list-group-item" ng-repeat="user in serverUsers" ng-bind="user.name"></li>
+  <li class="list-group-item" ng-repeat="user in serverUsers" ng-bind="user.name" ng-class="{ active: user.name === targetUser }" ng-click="setTargetUser(user.name)"></li>
 </ul>
 
 <div class="text-center" ng-if="remoteUsers.length > 0">
   <h3>In Chat</h3>
 </div>
 <ul class="list-group">
-  <li class="list-group-item" ng-repeat="user in remoteUsers" ng-bind="user.name"></li>
+  <li class="list-group-item" ng-repeat="user in remoteUsers" ng-bind="user.name" ng-class="{ active: user.name === targetUser }" ng-click="setTargetUser(user.name)"></li>
 </ul>
