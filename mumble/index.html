@@ -10,7 +10,7 @@ title: Mumble
           <div class="panel panel-default">
             <div class="panel-heading">{{mumble_server.title}} {% if mumble_server.active %}<span class="label label-primary">Active</span>{% endif %}</div>
             <div class="panel-body">
-              IP: {{mumble_server.ip}} <br />
+              Address: {{mumble_server.ip}} <br />
               Port: {{mumble_server.port}} <br />
               Username: {{mumble_server.username | xml_escape}} <br />
               Password: {{mumble_server.password | xml_escape}}
