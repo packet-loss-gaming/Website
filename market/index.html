@@ -5,8 +5,8 @@ scripts: ['https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js'
 ---
 
 <div class="container" ng-app="skelrilMarketApp" ng-controller="MarketController">
-  <form>
-    <div class="form-group">
+  <form style="position: sticky; top: 51px;">
+    <div style="background-color: white; padding-top: 4px; padding-bottom: 4px;">
       <input ng-model="searchText" class="form-control" placeholder="Search...">
     </div>
   </form>
@@ -17,18 +17,22 @@ scripts: ['https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js'
     </section>
     <section ng-if="!loading">
       <table class="table table-striped">
-        <tr>
-          <td>Item Name</td>
-          <td>Buy Price</td>
-          <td>Sell Price</td>
-          <td>Stock</td>
-        </tr>
-        <tr ng-repeat="item in marketItems | filter: searchText">
-          <td>[[ item.name ]]</td>
-          <td>[[ item.buy_price ]]</td>
-          <td>[[ item.sell_price ]]</td>
-          <td>[[ item.stock ]]</td>
-        </tr>
+        <thead>
+          <tr>
+            <th width="55%">Item Name</th>
+            <th width="15%" class="text-right">Buy Price</th>
+            <th width="15%" class="text-right">Sell Price</th>
+            <th width="15%" class="text-right">Stock</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="item in marketItems | filter: searchText | orderBy: 'buy_price'">
+            <td width="55%">[[ item.name.toUpperCase() ]]</td>
+            <td width="15%" class="text-right">[[ item.buy_price | number: 2 ]]</td>
+            <td width="15%" class="text-right">[[ item.sell_price | number: 2 ]]</td>
+            <td width="15%" class="text-right">[[ item.stock | number: 0 ]]</td>
+          </tr>
+        </tbody>
       </table>
     </section>
   </div>

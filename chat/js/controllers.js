@@ -7,7 +7,7 @@ chatCraftWebApp.config(function($interpolateProvider) {
   $interpolateProvider.endSymbol(']]');
 });
 
-skelrilMarketApp.controller('ChatCraftController', function($scope) {
+chatCraftWebApp.controller('ChatCraftController', function($scope) {
 
   $scope.user = { };
   $scope.chatResponses = [];
