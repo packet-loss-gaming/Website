@@ -7,7 +7,7 @@ skelrilMarketApp.config(function($interpolateProvider) {
   $interpolateProvider.endSymbol(']]');
 });
 
-chatCraftWebApp.controller('MarketController', function($scope, $http) {
+skelrilMarketApp.controller('MarketController', function($scope, $http) {
   $scope.loading = true;
 
   $http.get('http://service.skelril.com/market/index.json').then(
