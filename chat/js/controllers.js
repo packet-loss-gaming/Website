@@ -3,11 +3,11 @@
 var chatCraftWebApp = angular.module('chatCraftWebApp', ['ngSanitize']);
 
 chatCraftWebApp.config(function($interpolateProvider) {
-    $interpolateProvider.startSymbol('[[');
-    $interpolateProvider.endSymbol(']]');
-  });
+  $interpolateProvider.startSymbol('[[');
+  $interpolateProvider.endSymbol(']]');
+});
 
-chatCraftWebApp.controller('ChatCraftController', function ($scope) {
+skelrilMarketApp.controller('ChatCraftController', function($scope) {
 
   $scope.user = { };
   $scope.chatResponses = [];

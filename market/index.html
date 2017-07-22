@@ -1,0 +1,35 @@
+---
+layout: base
+title: Market
+scripts: ['https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js', 'https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-sanitize.min.js', 'js/controllers.js']
+---
+
+<div class="container" ng-app="skelrilMarketApp" ng-controller="MarketController">
+  <form>
+    <div class="form-group">
+      <input ng-model="searchText" class="form-control" placeholder="Search...">
+    </div>
+  </form>
+
+  <div>
+    <section ng-if="loading">
+      Loading...
+    </section>
+    <section ng-if="!loading">
+      <table class="table table-striped">
+        <tr>
+          <td>Item Name</td>
+          <td>Buy Price</td>
+          <td>Sell Price</td>
+          <td>Stock</td>
+        </tr>
+        <tr ng-repeat="item in marketItems | filter: searchText">
+          <td>[[ item.name ]]</td>
+          <td>[[ item.buy_price ]]</td>
+          <td>[[ item.sell_price ]]</td>
+          <td>[[ item.stock ]]</td>
+        </tr>
+      </table>
+    </section>
+  </div>
+</div>
