@@ -1,6 +1,6 @@
  "use strict"
 
-var skelrilMarketApp = angular.module('skelrilMarketApp');
+var skelrilMarketApp = angular.module('skelrilMarketApp', []);
 
 skelrilMarketApp.config(function($interpolateProvider) {
   $interpolateProvider.startSymbol('[[');
