@@ -1,9 +1,0 @@
-<ul class="list-group" style="margin-top: 20px;">
-  <li class="list-group-item" ng-repeat="response in chatResponses">
-    <span ng-if="response.method === 'send'" ng-bind-html="getChatMessage(response) | linky: '_blank'"></span>
-    <span ng-if="response.method === 'psend'" ng-bind-html="getPrivateMessage(response) | linky: '_blank'"></span>
-    <span ng-if="response.method === 'ssend'" ng-bind-html="getSystemMessage(response) | linky: '_blank'"></span>
-    <span ng-if="response.method === 'join'" ng-bind="getJoinMessage(response)"></span>
-    <span ng-if="response.method === 'leave'" ng-bind="getLeaveMessage(response)"></span>
-  </li>
-</ul>

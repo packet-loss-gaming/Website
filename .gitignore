@@ -1,5 +1,4 @@
-_site/
-*.directory
-.bundle
-.gh-pages
-Gemfile.lock
+.next/
+
+node_modules/
+out/
