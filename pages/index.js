@@ -3,10 +3,10 @@ import Bootstrap from '../components/Bootstrap'
 export default () => (
   <div>
     <Bootstrap>
-      <title>Skelril Gaming</title>
+      <title>Packet Loss Gaming</title>
     </Bootstrap>
     <div class="container">
-      <h1 class="mt-5">Skelril Gaming</h1>
+      <h1 class="mt-5">Packet Loss Gaming</h1>
       <p class="lead">Site under construction.</p>
     </div>
   </div>

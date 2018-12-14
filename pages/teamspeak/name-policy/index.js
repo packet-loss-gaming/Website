@@ -3,7 +3,7 @@ import Bootstrap from '../../../components/Bootstrap'
 export default () => (
   <div>
     <Bootstrap>
-      <title>Skelril Gaming - TeamSpeak Name Policy</title>
+      <title>Packet Loss Gaming - TeamSpeak Name Policy</title>
     </Bootstrap>
     <div class="container">
       <h1 class="mt-5">TeamSpeak Name Policy</h1>
