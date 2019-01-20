@@ -10,7 +10,7 @@
   var originalBaseUrl = getBaseUrl();
 
   setTimeout(function() {
-      window.location = originalBaseUrl + "/voip/connect-info";
+      window.location = originalBaseUrl + "/voip/connect-post";
   }, 750);
 
   window.location = "mumble://voip.packetloss.gg:5360?title=Packet Loss Gaming&version=1.2.0";
