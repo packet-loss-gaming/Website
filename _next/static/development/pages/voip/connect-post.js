@@ -1,4 +1,4 @@
-((window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/voip/connect-info.js"],{
+((window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/voip/connect-post.js"],{
 
 /***/ "./components/Bootstrap.js":
 /*!*********************************!*\
@@ -6007,9 +6007,9 @@ module.exports = function(originalModule) {
 
 /***/ }),
 
-/***/ "./pages/voip/connect-info/index.js":
+/***/ "./pages/voip/connect-post/index.js":
 /*!******************************************!*\
-  !*** ./pages/voip/connect-info/index.js ***!
+  !*** ./pages/voip/connect-post/index.js ***!
   \******************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -6019,7 +6019,7 @@ __webpack_require__.r(__webpack_exports__);
 /* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_Bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../components/Bootstrap */ "./components/Bootstrap.js");
-var _jsxFileName = "/home/wyatt/Dev/Projects/Packet Loss Gaming/packetloss.gg/pages/voip/connect-info/index.js";
+var _jsxFileName = "/home/wyatt/Dev/Projects/Packet Loss Gaming/packetloss.gg/pages/voip/connect-post/index.js";
 
 
 
@@ -6203,7 +6203,7 @@ var VoIPConstants = __webpack_require__(/*! ../../../constants/Voip */ "./consta
           next.router.update(r, Component)
         }
       }
-    })(typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__.default : (module.exports.default || module.exports), "/voip/connect-info")
+    })(typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__.default : (module.exports.default || module.exports), "/voip/connect-post")
   
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../node_modules/webpack/buildin/harmony-module.js */ "./node_modules/webpack/buildin/harmony-module.js")(module)))
 
@@ -6211,13 +6211,13 @@ var VoIPConstants = __webpack_require__(/*! ../../../constants/Voip */ "./consta
 
 /***/ 4:
 /*!************************************************!*\
-  !*** multi ./pages/voip/connect-info/index.js ***!
+  !*** multi ./pages/voip/connect-post/index.js ***!
   \************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__NEXT_REGISTER_PAGE('/voip/connect-info', function() {
-module.exports = __webpack_require__(/*! ./pages/voip/connect-info/index.js */"./pages/voip/connect-info/index.js");
+__NEXT_REGISTER_PAGE('/voip/connect-post', function() {
+module.exports = __webpack_require__(/*! ./pages/voip/connect-post/index.js */"./pages/voip/connect-post/index.js");
 
 return { page: module.exports.default }});
 
@@ -6235,4 +6235,4 @@ module.exports = dll_e8427f5b250f425a56e7;
 /***/ })
 
 },[[4,"static/runtime/webpack.js"]]]));;
-//# sourceMappingURL=connect-info.js.map
+//# sourceMappingURL=connect-post.js.map
