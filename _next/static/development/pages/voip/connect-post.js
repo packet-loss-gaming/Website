@@ -98,6 +98,129 @@ var Bootstrap = function Bootstrap(props) {
 
 /***/ }),
 
+/***/ "./components/NavBar.js":
+/*!******************************!*\
+  !*** ./components/NavBar.js ***!
+  \******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "/home/wyatt/Dev/Projects/Packet Loss Gaming/packetloss.gg/components/NavBar.js";
+
+
+var NavBar = function NavBar(props) {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
+    class: "navbar navbar-expand-lg sticky-top navbar-dark bg-dark",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 2
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    class: "container",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 3
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    class: "navbar-brand",
+    href: "/",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 4
+    },
+    __self: this
+  }, "Packet Loss Gaming"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    class: "navbar-toggler",
+    type: "button",
+    "data-toggle": "collapse",
+    "data-target": "#navbarSupportedContent",
+    "aria-controls": "navbarSupportedContent",
+    "aria-expanded": "false",
+    "aria-label": "Toggle navigation",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 5
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    class: "navbar-toggler-icon",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 6
+    },
+    __self: this
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    class: "collapse navbar-collapse",
+    id: "navbarSupportedContent",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+    class: "navbar-nav ml-auto",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    class: "nav-item",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    class: "nav-link",
+    href: "/voip",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12
+    },
+    __self: this
+  }, "VoIP"))))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (NavBar);
+
+/***/ }),
+
+/***/ "./components/PrimaryContainer.js":
+/*!****************************************!*\
+  !*** ./components/PrimaryContainer.js ***!
+  \****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "/home/wyatt/Dev/Projects/Packet Loss Gaming/packetloss.gg/components/PrimaryContainer.js";
+
+
+var PrimaryContainer = function PrimaryContainer(props) {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "container mt-3",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 2
+    },
+    __self: this
+  }, props.children);
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (PrimaryContainer);
+
+/***/ }),
+
 /***/ "./constants/Voip.js":
 /*!***************************!*\
   !*** ./constants/Voip.js ***!
@@ -6019,7 +6142,11 @@ __webpack_require__.r(__webpack_exports__);
 /* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_Bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../components/Bootstrap */ "./components/Bootstrap.js");
+/* harmony import */ var _components_NavBar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../components/NavBar */ "./components/NavBar.js");
+/* harmony import */ var _components_PrimaryContainer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../components/PrimaryContainer */ "./components/PrimaryContainer.js");
 var _jsxFileName = "/home/wyatt/Dev/Projects/Packet Loss Gaming/packetloss.gg/pages/voip/connect-post/index.js";
+
+
 
 
 
@@ -6029,39 +6156,44 @@ var VoIPConstants = __webpack_require__(/*! ../../../constants/Voip */ "./consta
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 6
+      lineNumber: 8
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Bootstrap__WEBPACK_IMPORTED_MODULE_1__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 7
+      lineNumber: 9
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("title", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8
-    },
-    __self: this
-  }, "Packet Loss Gaming - VoIP Connect")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "container",
-    __source: {
-      fileName: _jsxFileName,
       lineNumber: 10
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    className: "lead text-center mt-3 mb-5",
+  }, "Packet Loss Gaming - VoIP Connect")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_NavBar__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 12
+    },
+    __self: this
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_PrimaryContainer__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "lead text-center mb-5",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14
     },
     __self: this
   }, "Your browser should prompt you momentarily to connect to Packet Loss Gaming Mumble server.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 15
     },
     __self: this
   }), "If this does not occur, you may need to ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
@@ -6069,35 +6201,35 @@ var VoIPConstants = __webpack_require__(/*! ../../../constants/Voip */ "./consta
     target: "_blank",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 16
     },
     __self: this
   }, "download Mumble"), "."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "text-center",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 19
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "/voip/connect",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17
+      lineNumber: 20
     },
     __self: this
   }, "Retry Automatic Connection"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "pl-3 pr-3 d-none d-sm-inline",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 21
     },
     __self: this
   }, "\u2022"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
     className: "mb-3 d-block d-sm-none",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 22
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
@@ -6108,7 +6240,7 @@ var VoIPConstants = __webpack_require__(/*! ../../../constants/Voip */ "./consta
     "aria-controls": "collapseExample",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 23
     },
     __self: this
   }, "Show Manual Connection Information")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -6116,7 +6248,7 @@ var VoIPConstants = __webpack_require__(/*! ../../../constants/Voip */ "./consta
     id: "manualConnectionInfo",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25
+      lineNumber: 28
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
@@ -6126,70 +6258,70 @@ var VoIPConstants = __webpack_require__(/*! ../../../constants/Voip */ "./consta
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26
+      lineNumber: 29
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27
+      lineNumber: 30
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28
+      lineNumber: 31
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
     scope: "row",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 29
-    },
-    __self: this
-  }, "Label"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 30
-    },
-    __self: this
-  }, VoIPConstants.label)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 32
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
-    scope: "row",
+  }, "Label"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 33
     },
     __self: this
-  }, "Address"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+  }, VoIPConstants.label)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34
-    },
-    __self: this
-  }, VoIPConstants.address)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 36
+      lineNumber: 35
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
     scope: "row",
     __source: {
       fileName: _jsxFileName,
+      lineNumber: 36
+    },
+    __self: this
+  }, "Address"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+    __source: {
+      fileName: _jsxFileName,
       lineNumber: 37
+    },
+    __self: this
+  }, VoIPConstants.address)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 39
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
+    scope: "row",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 40
     },
     __self: this
   }, "Port"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38
+      lineNumber: 41
     },
     __self: this
   }, VoIPConstants.port)))))));
@@ -6216,7 +6348,7 @@ var VoIPConstants = __webpack_require__(/*! ../../../constants/Voip */ "./consta
 
 /***/ }),
 
-/***/ 3:
+/***/ 7:
 /*!************************************************!*\
   !*** multi ./pages/voip/connect-post/index.js ***!
   \************************************************/
@@ -6241,5 +6373,5 @@ module.exports = dll_e8427f5b250f425a56e7;
 
 /***/ })
 
-},[[3,"static/runtime/webpack.js"]]]));;
+},[[7,"static/runtime/webpack.js"]]]));;
 //# sourceMappingURL=connect-post.js.map

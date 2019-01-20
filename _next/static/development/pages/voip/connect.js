@@ -6090,7 +6090,7 @@ var VoIPConstants = __webpack_require__(/*! ../../../constants/Voip */ "./consta
 
 /***/ }),
 
-/***/ 4:
+/***/ 6:
 /*!*******************************************!*\
   !*** multi ./pages/voip/connect/index.js ***!
   \*******************************************/
@@ -6115,5 +6115,5 @@ module.exports = dll_e8427f5b250f425a56e7;
 
 /***/ })
 
-},[[4,"static/runtime/webpack.js"]]]));;
+},[[6,"static/runtime/webpack.js"]]]));;
 //# sourceMappingURL=connect.js.map
