@@ -1,13 +1,15 @@
 import Bootstrap from '../components/Bootstrap'
+import NavBar from '../components/NavBar'
+import PrimaryContainer from '../components/PrimaryContainer'
 
 export default () => (
   <div>
     <Bootstrap>
       <title>Packet Loss Gaming</title>
     </Bootstrap>
-    <div class="container">
-      <h1 class="mt-5">Packet Loss Gaming</h1>
+    <NavBar></NavBar>
+    <PrimaryContainer>
       <p class="lead">Site under construction.</p>
-    </div>
+    </PrimaryContainer>
   </div>
 )

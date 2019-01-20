@@ -1,4 +1,6 @@
 import Bootstrap from '../../../components/Bootstrap'
+import NavBar from '../../../components/NavBar'
+import PrimaryContainer from '../../../components/PrimaryContainer'
 
 let VoIPConstants = require('../../../constants/Voip')
 
@@ -7,8 +9,9 @@ export default () => (
     <Bootstrap>
       <title>Packet Loss Gaming - VoIP Connect</title>
     </Bootstrap>
-    <div className="container">
-      <p className="lead text-center mt-3 mb-5">
+    <NavBar></NavBar>
+    <PrimaryContainer>
+      <p className="lead text-center mb-5">
         Your browser should prompt you momentarily to connect to Packet Loss Gaming Mumble server.<br />
         If this does not occur, you may need to <a href="https://mumble.info" target="_blank">download Mumble</a>.
       </p>
@@ -40,7 +43,7 @@ export default () => (
           </tbody>
         </table>
       </div>
-    </div>
+    </PrimaryContainer>
   </div>
 )
 

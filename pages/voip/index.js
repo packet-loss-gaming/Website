@@ -1,4 +1,6 @@
 import Bootstrap from '../../components/Bootstrap'
+import NavBar from '../../components/NavBar'
+import PrimaryContainer from '../../components/PrimaryContainer'
 import NamePolicyBody from '../../components/NamePolicyBody'
 
 let VoIPConstants = require('../../constants/Voip')
@@ -6,10 +8,11 @@ let VoIPConstants = require('../../constants/Voip')
 export default () => (
   <div>
     <Bootstrap>
-        <title>Packet Loss Gaming - About VoIP</title>
+        <title>Packet Loss Gaming - VoIP Overview</title>
     </Bootstrap>
-    <div class="container">
-      <h1 class="mt-5">Packet Loss Gaming - About VoIP</h1>
+    <NavBar></NavBar>
+    <PrimaryContainer>
+      <h1>VoIP Overview</h1>
       <div class="row">
         <div class="col-sm-8">
           <p class="lead pt-3">
@@ -47,7 +50,7 @@ export default () => (
           <NamePolicyBody></NamePolicyBody>
         </div>
       </div>
-    </div>
+    </PrimaryContainer>
   </div>
 )
 

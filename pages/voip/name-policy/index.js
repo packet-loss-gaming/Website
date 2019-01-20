@@ -1,4 +1,6 @@
 import Bootstrap from '../../../components/Bootstrap'
+import NavBar from '../../../components/NavBar'
+import PrimaryContainer from '../../../components/PrimaryContainer'
 import NamePolicyBody from '../../../components/NamePolicyBody'
 
 export default () => (
@@ -6,10 +8,11 @@ export default () => (
     <Bootstrap>
       <title>Packet Loss Gaming - VoIP Name Policy</title>
     </Bootstrap>
-    <div class="container">
-      <h1 class="mt-5">VoIP Name Policy</h1>
+    <NavBar></NavBar>
+    <PrimaryContainer>
+      <h1>VoIP Name Policy</h1>
       <NamePolicyBody></NamePolicyBody>
-    </div>
+    </PrimaryContainer>
   </div>
 )
 
