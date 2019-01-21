@@ -10,7 +10,7 @@ export default () => (
       <title>Packet Loss Gaming - VoIP Connect</title>
       <script charSet="UTF-8" src="/static/mumble-auto-connect.js"></script>
     </Bootstrap>
-
+    <NavBar></NavBar>
     <PrimaryContainer>
       <p className="lead text-center mb-5">
         Your browser should prompt you momentarily to connect to Packet Loss Gaming Mumble server.<br />
