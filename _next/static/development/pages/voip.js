@@ -56,12 +56,20 @@ var Bootstrap = function Bootstrap(props) {
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
     rel: "stylesheet",
-    href: "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css",
-    integrity: "sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO",
-    crossOrigin: "anonymous",
+    href: "https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 13
+    },
+    __self: this
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
+    rel: "stylesheet",
+    href: "https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css",
+    integrity: "sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS",
+    crossOrigin: "anonymous",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("script", {
@@ -70,25 +78,25 @@ var Bootstrap = function Bootstrap(props) {
     crossOrigin: "anonymous",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14
-    },
-    __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("script", {
-    src: "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js",
-    integrity: "sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49",
-    crossOrigin: "anonymous",
-    __source: {
-      fileName: _jsxFileName,
       lineNumber: 15
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("script", {
-    src: "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js",
-    integrity: "sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy",
+    src: "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js",
+    integrity: "sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut",
     crossOrigin: "anonymous",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 16
+    },
+    __self: this
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("script", {
+    src: "https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js",
+    integrity: "sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k",
+    crossOrigin: "anonymous",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17
     },
     __self: this
   })));
@@ -185,21 +193,21 @@ var _jsxFileName = "/home/wyatt/Dev/Projects/Packet Loss Gaming/packetloss.gg/co
 
 var NavBar = function NavBar(props) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
-    class: "navbar navbar-expand-lg sticky-top navbar-dark bg-dark",
+    className: "navbar navbar-expand-lg sticky-top navbar-dark bg-dark",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 2
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    class: "container",
+    className: "container",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 3
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    class: "navbar-brand",
+    className: "navbar-brand",
     href: "/",
     __source: {
       fileName: _jsxFileName,
@@ -207,7 +215,7 @@ var NavBar = function NavBar(props) {
     },
     __self: this
   }, "Packet Loss Gaming"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    class: "navbar-toggler",
+    className: "navbar-toggler",
     type: "button",
     "data-toggle": "collapse",
     "data-target": "#navbarSupportedContent",
@@ -220,14 +228,14 @@ var NavBar = function NavBar(props) {
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    class: "navbar-toggler-icon",
+    className: "navbar-toggler-icon",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 6
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    class: "collapse navbar-collapse",
+    className: "collapse navbar-collapse",
     id: "navbarSupportedContent",
     __source: {
       fileName: _jsxFileName,
@@ -235,21 +243,21 @@ var NavBar = function NavBar(props) {
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-    class: "navbar-nav ml-auto",
+    className: "navbar-nav ml-auto",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 10
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    class: "nav-item",
+    className: "nav-item",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 11
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    class: "nav-link",
+    className: "nav-link",
     href: "/voip",
     __source: {
       fileName: _jsxFileName,
