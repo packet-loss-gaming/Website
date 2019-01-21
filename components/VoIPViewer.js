@@ -16,7 +16,7 @@ export default class VoIPViewer extends React.Component {
         channels: [
           {
             name: "Game Lobby 1",
-              users: ["Cow_Fu", "Dangerous_Dan"],
+            users: ["Cow_Fu", "Dangerous_Dan"],
             channels: [
               {
                 name: "Sub Lobby 1",
