@@ -90,13 +90,13 @@ export default class VoIPViewer extends React.Component {
     if (this.state) {
       channelPreview = this.renderChannel(this.state.rootChannel, 0)
     } else {
-        channelPreview = (
-          <div className="d-flex justify-content-center mt-5">
-            <div className="spinner-border" role="status">
-              <span className="sr-only">Loading...</span>
-            </div>
+      channelPreview = (
+        <div className="d-flex justify-content-center mt-5">
+          <div className="spinner-border" role="status">
+            <span className="sr-only">Loading...</span>
           </div>
-        )
+        </div>
+      )
     }
 
     return (
