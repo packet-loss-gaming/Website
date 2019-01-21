@@ -1,12 +1,12 @@
 (function() {
-  var LOCAL_STORAGE_KEY = "mumble-just-attempted-connection";
+  var SESSION_STORAGE_KEY = "mumble-just-attempted-connection";
 
   var getJustAttemptedConnection = function() {
-    return localStorage.getItem(LOCAL_STORAGE_KEY) === "true";
+    return sessionStorage.getItem(SESSION_STORAGE_KEY) === "true";
   };
 
   var setJustAttemptedConnection = function(value) {
-    localStorage.setItem(LOCAL_STORAGE_KEY, value);
+    sessionStorage.setItem(SESSION_STORAGE_KEY, value);
   };
 
   var getBaseUrl = function() {
