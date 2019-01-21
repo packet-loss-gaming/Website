@@ -20,7 +20,7 @@ export default () => (
       <p className="text-center">
         <a href="/voip/connect">Retry Automatic Connection</a>
         <span className="pl-3 pr-3 d-none d-sm-inline">&bull;</span>
-        <br className="mb-3 d-block d-sm-none"/>
+        <span className="mb-3 d-block d-sm-none"></span>
         <a data-toggle="collapse" href="#manualConnectionInfo" role="button" aria-expanded="false" aria-controls="collapseExample">
           Show Manual Connection Information
         </a>
