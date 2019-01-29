@@ -9,7 +9,18 @@ const NavBar = (props) => (
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav ml-auto">
           <li className="nav-item">
-            <a className="nav-link" href="/voip">VoIP</a>
+            <a className="nav-link" href="/coc">Code of Conduct</a>
+          </li>
+          <li className="nav-item dropdown">
+            <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              VoIP
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="/voip">Overview</a>
+              <a class="dropdown-item" href="/voip/current-users">Current Users</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="/voip/connect">Quick Connect</a>
+            </div>
           </li>
         </ul>
       </div>

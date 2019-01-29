@@ -4,29 +4,11 @@ import 'isomorphic-unfetch'
 export default class VoIPViewer extends React.Component {
   async componentDidMount () {
     // eslint-disable-next-line no-undef
-    // const res = await fetch('https://www.nfoservers.com/query/mstat.pl?id=pktloss')
-    // const json = await res.json()
-
-    await await new Promise(resolve => setTimeout(resolve, 1000));
+    const res = await fetch('https://api.packetloss.gg/voip/current-users')
+    const json = await res.json()
 
     this.setState(state => ({
-      rootChannel: {
-        name: "Root",
-        users: ["Dark_Arc"],
-        channels: [
-          {
-            name: "Game Lobby 1",
-            users: ["Cow_Fu", "Dangerous_Dan"],
-            channels: [
-              {
-                name: "Sub Lobby 1",
-                users: ["Rambo"],
-                channels: []
-              }
-            ]
-          }
-        ]
-      }
+      rootChannel: json
     }));
   }
 
