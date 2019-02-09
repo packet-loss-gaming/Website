@@ -1,6 +1,8 @@
 import Bootstrap from '../../components/Bootstrap'
 import NavBar from '../../components/NavBar'
 import PrimaryContainer from '../../components/PrimaryContainer'
+
+import StyledLink from '../../components/StyledLink'
 import NamePolicyBody from '../../components/NamePolicyBody'
 
 let VoIPConstants = require('../../constants/Voip')
@@ -21,7 +23,7 @@ export default () => (
           </p>
 
           <p>
-            You can manually connect using the connection information, or <a href="/voip/connect" target="_blank">click here to automatically connect</a>.
+            You can manually connect using the connection information, or <StyledLink href="/voip/connect" target="_blank">click here to automatically connect</StyledLink>.
           </p>
         </div>
         <div class="col-sm-4">

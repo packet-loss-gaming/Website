@@ -2,7 +2,7 @@ import React from 'react'
 import 'isomorphic-unfetch'
 
 export default class VoIPViewer extends React.Component {
-  async componentDidMount () {
+  async componentDidMount() {
     // eslint-disable-next-line no-undef
     const res = await fetch('https://api.packetloss.gg/voip/current-users')
     const json = await res.json()
