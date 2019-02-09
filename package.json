@@ -6,6 +6,10 @@
     "export": "next export"
   },
   "dependencies": {
-    "isomorphic-unfetch": "^3.0.0"
+    "isomorphic-unfetch": "^3.0.0",
+    "showdown": "^1.9.0"
+  },
+  "devDependencies": {
+    "raw-loader": "^1.0.0"
   }
 }

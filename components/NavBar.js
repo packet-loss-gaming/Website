@@ -15,11 +15,11 @@ const NavBar = (props) => (
             <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               VoIP
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="/voip">Overview</a>
-              <a class="dropdown-item" href="/voip/current-users">Current Users</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="/voip/connect">Quick Connect</a>
+            <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a className="dropdown-item" href="/voip">Overview</a>
+              <a className="dropdown-item" href="/voip/current-users">Current Users</a>
+              <div className="dropdown-divider"></div>
+              <a className="dropdown-item" href="/voip/connect">Quick Connect</a>
             </div>
           </li>
         </ul>
