@@ -15,7 +15,6 @@ export default class MarkdownContent extends React.Component {
   }
 
   render() {
-    console.log(this)
     return <div dangerouslySetInnerHTML={ { __html: this.state.body } } />
   }
 }
