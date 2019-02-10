@@ -8,5 +8,7 @@ let buildTitle = (data) => {
 
 self.addEventListener('push', event => {
   const data = event.data.json()
-  self.registration.showNotification(buildTitle(data))
+  self.registration.showNotification(buildTitle(data), {
+    icon: 'https://packetloss.gg/static/favicon.png'
+  })
 })
