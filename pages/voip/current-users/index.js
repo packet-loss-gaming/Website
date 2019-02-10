@@ -8,6 +8,7 @@ export default () => {
     <div>
       <Bootstrap>
         <title>Packet Loss Gaming - VoIP Current Users</title>
+        <script charSet="UTF-8" src="/static/scripts/voip/current-user-notification-bootstrap.js"></script>
       </Bootstrap>
       <NavBar></NavBar>
       <PrimaryContainer>
