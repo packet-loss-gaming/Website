@@ -1,6 +1,0 @@
-_site/
-*.directory
-.bundle
-.gh-pages
-Gemfile.lock
-CNAME
