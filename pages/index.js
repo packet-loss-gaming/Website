@@ -17,7 +17,7 @@ export default () => (
     `}</style>
     <NavBar></NavBar>
     <PrimaryContainer>
-      <div className="hidden-xs pt-5"></div>
+      <div className="d-none d-sm-block pt-5"></div>
       <img className="rounded mx-auto d-block" style={{maxHeight: 10 + 'em'}} src="/static/favicon.png" />
       <div className="text-center">
         <h1>Packet Loss Gaming</h1>
