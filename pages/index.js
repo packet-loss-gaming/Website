@@ -26,6 +26,9 @@ export default () => (
         height: 100vh;
         width: 100%;
       }
+      .dropdown-item {
+        text-shadow: none;
+      }
     `}</style>
     <div id="background" className="splash-frame">
       <video preload="auto" autoplay="true" loop="loop" muted="muted" volume="0" style={{width: '100%', height: '100%', objectFit: 'cover'}}>
