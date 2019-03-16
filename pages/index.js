@@ -31,7 +31,7 @@ export default () => (
       }
     `}</style>
     <div id="background" className="splash-frame">
-      <video preload="auto" autoplay="true" loop="loop" muted="muted" volume="0" style={{width: '100%', height: '100%', objectFit: 'cover'}}>
+      <video preload="auto" autoPlay="true" loop="loop" muted="muted" volume="0" style={{width: '100%', height: '100%', objectFit: 'cover'}}>
         <source src="/static/videos/splash.webm" type="video/webm" />
       </video>
     </div>
