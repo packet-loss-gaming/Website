@@ -9,7 +9,7 @@ export default () => (
     </Bootstrap>
     <style jsx global>{`
       body {
-        background: #515151;
+        background: #000000;
       }
       #background {
         filter: blur(15px);
