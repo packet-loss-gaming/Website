@@ -33,6 +33,7 @@ export default () => (
     <div id="background" className="splash-frame">
       <video preload="auto" autoPlay="true" loop="loop" muted="muted" volume="0" style={{width: '100%', height: '100%', objectFit: 'cover'}}>
         <source src="/static/videos/splash.webm" type="video/webm" />
+        <source src="/static/videos/splash.mp4" type="video/mp4" />
       </video>
     </div>
     <div id="overlay" className="splash-frame">
