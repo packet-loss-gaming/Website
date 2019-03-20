@@ -8,11 +8,11 @@ let buildTitle = (data) => {
 
 const ONE_SECOND = 1000
 const ONE_HOUR = 60 * 60 * ONE_SECOND
-const TWELVE_HOURS = 12 * ONE_HOUR
+const THREE_HOURS = 3 * ONE_HOUR
 
 let isExpiredNotification = (data) => {
   let timeDiff = new Date() - Date.parse(data.sentAt)
-  return timeDiff > TWELVE_HOURS
+  return timeDiff > THREE_HOURS
 }
 
 self.addEventListener('push', (event) => {
