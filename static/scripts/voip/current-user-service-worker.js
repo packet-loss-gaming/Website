@@ -10,8 +10,12 @@ const ONE_SECOND = 1000
 const ONE_HOUR = 60 * 60 * ONE_SECOND
 const THREE_HOURS = 3 * ONE_HOUR
 
+let getNotificationTime = (data) => {
+  return Date.parse(data.sent_at)
+}
+
 let isExpiredNotification = (data) => {
-  let timeDiff = new Date() - Date.parse(data.sentAt)
+  let timeDiff = new Date() - getNotificationTime(data)
   return timeDiff > THREE_HOURS
 }
 
