@@ -2,4 +2,5 @@
 
 rm -rf out/
 npm run build
-rsync -av --delete --exclude '.git' out/ gh-pages/
+npm run export
+rsync -av --delete --exclude '.git' --exclude '.nojekyll' out/ gh-pages/
