@@ -4,6 +4,7 @@ const { promisify } = require('util')
 const copyFile = promisify(fs.copyFile)
 
 module.exports = {
+  distDir: 'out',
   exportPathMap: async function (defaultPathMap) {
     console.log(defaultPathMap)
     return defaultPathMap
