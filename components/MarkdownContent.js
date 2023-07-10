@@ -1,3 +1,5 @@
+import React from 'react';
+
 let showdown = require('showdown')
 let converter = new showdown.Converter()
 

@@ -1,5 +1,6 @@
 import Bootstrap from '../components/Bootstrap'
 import NavBar from '../components/CinematicNavBar'
+import ClipVideoPlayer from '../components/ClipVideoPlayer'
 import PrimaryContainer from '../components/PrimaryContainer'
 
 export default () => (
@@ -10,9 +11,6 @@ export default () => (
     <style jsx global>{`
       body {
         background: #000000;
-      }
-      #background {
-        filter: blur(15px);
       }
       #overlay {
         color: white;
@@ -30,12 +28,7 @@ export default () => (
         text-shadow: none;
       }
     `}</style>
-    <div id="background" className="splash-frame">
-      <video preload="auto" autoPlay="true" loop="loop" muted="muted" volume="0" style={{width: '100%', height: '100%', objectFit: 'cover'}}>
-        <source src="/static/videos/splash.webm" type="video/webm" />
-        <source src="/static/videos/splash.mp4" type="video/mp4" />
-      </video>
-    </div>
+    <ClipVideoPlayer className="splash-frame"></ClipVideoPlayer>
     <div id="overlay" className="splash-frame">
       <NavBar></NavBar>
       <PrimaryContainer>
