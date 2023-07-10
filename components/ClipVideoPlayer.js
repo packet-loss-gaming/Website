@@ -43,7 +43,7 @@ export default class ClipVideoPlayer extends React.Component {
             volume="0"
             style={{width: '100%', height: '100%', objectFit: 'cover'}}
             onEnded={this.changeVideo}
-            ref={playerRef}
+            ref={this.videoRef}
         />
       </div>
     )
